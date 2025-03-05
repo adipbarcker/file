@@ -66,12 +66,12 @@ sudo apt update
 info "Installing Docker Engine and related components..."
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Verify Docker installation
-info "Verifying Docker installation..."
-docker --version
-
 # Add current user to the docker group
 info "Adding user '$USER' to the 'docker' group..."
 sudo usermod -aG docker "$USER"
+
+# Verify Docker installation
+info "Verifying Docker installation..."
+sudo docker version
 
 success "Docker installation completed successfully. Please log out and log back in for group changes to take effect."
