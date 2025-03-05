@@ -37,18 +37,18 @@ echo "#################"
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 echo ""
 
-# Verify Docker installation and add user to the docker group
-echo "#############################"
-echo "Verifying Docker installation"
-echo "#############################"
-docker -v
-echo ""
-
 # Add user to the Docker group
 echo "###########################"
 echo "Adding user to Group Docker"
 echo "###########################"
 sudo usermod -aG docker $USER
+echo ""
+
+# Verify Docker installation and add user to the docker group
+echo "#############################"
+echo "Verifying Docker installation"
+echo "#############################"
+sudo docker version
 echo ""
 
 # Finish
